@@ -63,7 +63,7 @@
           <td class="col-md-1 text-left" *ngIf="i<5">{{i+1}}</td>
           <td class="col-md-3 text-left" *ngIf="i<5">{{item.homeTeamName}}</td>
           <td class="col-md-3 text-left" *ngIf="i<5">{{item.awayTeamName}}</td>
-          <td class="col-md-3 text-left" *ngIf="i<5"><count-down [text]="text" units="Days | Hours | Minutes | Seconds" end="{{item.date}}"></count-down>{{item.dateOfBirth}}</td>
+          <td class="col-md-3 text-left countdown" *ngIf="i<5"><count-down [text]="text" units="Days | Hours | Minutes | Seconds" end="{{item.date}}"></count-down></td>
         </tr>
       </tbody>
     </table>

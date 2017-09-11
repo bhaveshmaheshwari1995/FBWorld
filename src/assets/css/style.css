@@ -32,6 +32,9 @@ p.header-para{
 	text-transform:uppercase;
 	font-weight: 400;
 }
+.countdown h1{
+	font-size:1em;
+}
  ul.sign{
 	float:right;
 }
