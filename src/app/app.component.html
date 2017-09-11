@@ -1,0 +1,48 @@
+<!--header-->
+<div class="header">
+  <div class="header-bottom-top">
+    <div class="container">
+      <div class="clearfix"> </div>
+      <div class="header-bottom">			
+        <div class="logo">
+          <a href="index.html"><img src="../../assets/images/log.png" alt=" " /></a>
+        </div>
+        <div class="top-nav">
+          <span class="menu"> </span>
+          <ul>
+            <li class="active" ><a href="index.html" class="scroll">Home</a></li>
+            <li><a href="about.html" class="scroll"> Standings</a></li>
+            <li><a href="teams.html" class="scroll">Teams</a></li>
+            <li><a href="contact.html" class="scroll">Contact</a></li>
+          </ul>
+          <!--script-->
+          <script>
+            $("span.menu").click(function(){
+              $(".top-nav ul").slideToggle(500, function(){
+              });
+            });
+          </script>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BODY -->
+<router-outlet></router-outlet>
+<!--footer-->
+<!-- <div class="footer">
+  <div class="container">    
+    <div class="foter-bottom">			
+      <div class=" nav-top">				
+        <ul>
+          <li class="active" ><a href="index.html" class="scroll">Home</a></li>
+          <li><a href="about.html" class="scroll"> Standings</a></li>
+          <li><a href="teams.html" class="scroll">Teams</a></li>					
+          <li><a href="contact.html" class="scroll">Contact</a></li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="content-app">
+    <h3>{{teamName}}</h3>
+    
+    <h2 class = 'text-left'> Player Details</h2>
+    <table class="table table-striped" [mfData]="playerList" #mf="mfDataTable" [mfRowsOnPage]="5">
+      <thead>
+        <tr>
+          <th class="col-md-2">
+            <mfDefaultSorter by="name">S. No.</mfDefaultSorter>
+          </th>
+          <th class="col-md-3">
+            <mfDefaultSorter by="name">Name</mfDefaultSorter>
+          </th>
+          <th class="col-md-3">
+            <mfDefaultSorter by="position">Position</mfDefaultSorter>
+          </th>
+          <th class="col-md-2">
+            <mfDefaultSorter by="nationality">Nationality</mfDefaultSorter>
+          </th>
+          <th class="col-md-2">
+            <mfDefaultSorter by="dob">Date Of Birth</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mf.data; let i=index">
+          <td class="col-md-2 text-left">{{i+1}}</td>
+          <td class="col-md-3 text-left">{{item.name}}</td>
+          <td class="col-md-3 text-left">{{item.position}}</td>
+          <td class="col-md-2 text-left">{{item.nationality}}</td>
+          <td class="col-md-2 text-left">{{item.dateOfBirth}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <h2 class = 'text-left'> Fixtures Details</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-1">
+            S. No.
+          </th>
+          <th class="col-md-3">
+            Home Team
+          </th>
+          <th class="col-md-3">
+            Away Team
+          </th>
+          <th class="col-md-3">
+            Timer
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of fixtureDetails; let i=index">
+          <td class="col-md-1 text-left" *ngIf="i<5">{{i+1}}</td>
+          <td class="col-md-3 text-left" *ngIf="i<5">{{item.homeTeamName}}</td>
+          <td class="col-md-3 text-left" *ngIf="i<5">{{item.awayTeamName}}</td>
+          <td class="col-md-3 text-left" *ngIf="i<5"><count-down [text]="text" units="Days | Hours | Minutes | Seconds" end="2017-09-12T18:45:00Z"></count-down>{{item.dateOfBirth}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>

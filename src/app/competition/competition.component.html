@@ -1,0 +1,61 @@
+<!--banner-->
+<div class="slider">
+  <ul class="rslides" id="slider2">
+    <li><a href="#"><img src="../../assets/images/ban.jpg" alt="">
+      <div class="banner">
+        <span class=" matter "> </span>
+      </div>
+    </a></li>
+    <li><a href="#"><img src="../../assets/images/bb.jpg" alt="">
+      <div class="banner">
+        <span class=" matter"> </span>
+      </div>
+    </a></li>
+    <li><a href="#"><img src="../../assets/images/ban.jpg" alt="">
+      <div class="banner">
+        <span class="matter "> </span>
+      </div>
+    </a></li>	
+  </ul>
+</div>
+
+<!--content-->
+<div class="content">
+  <div class="content-app">
+    <div class="container">
+      <h3>Competitions</h3>  
+    </div>
+  </div>
+  
+  <div class="container">
+    <table class="table table-striped" [mfData]="competitionList" #mf="mfDataTable" [mfRowsOnPage]="8">
+      <thead>
+        <tr>
+          <th class="col-md-2">
+            <mfDefaultSorter by="name">S. No.</mfDefaultSorter>
+          </th>
+          <th class="col-md-3">
+            <mfDefaultSorter by="name">Championships</mfDefaultSorter>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mf.data; let i=index">
+          <td class="col-md-2 text-left">{{i+1}}</td>
+          <td class="col-md-3 text-left"><a href="standing/{{item.id}}">
+            {{item.caption}}
+          </a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>    
+  </div>
+</div>
+
+

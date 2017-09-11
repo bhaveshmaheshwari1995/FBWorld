@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="content-app">
+    <h3>{{leagueCaption}}</h3>
+    <table class="table table-striped" [mfData]="standing" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+    <tr>
+        <th class="col-md-1">
+            <mfDefaultSorter by="position">Position</mfDefaultSorter>
+        </th>
+        <th class="col-md-3">
+            <mfDefaultSorter by="teamName">Team</mfDefaultSorter>
+        </th>
+        <th class="col-md-2">
+            <mfDefaultSorter by="playedGames">Matches</mfDefaultSorter>
+        </th>
+        <th class="col-md-2">
+            <mfDefaultSorter by="wins">Wins</mfDefaultSorter>
+        </th>
+        <th class="col-md-2">
+            <mfDefaultSorter by="losses">Losses</mfDefaultSorter>
+        </th>
+        <th class="col-md-2">
+            <mfDefaultSorter by="goals">Goals</mfDefaultSorter>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="goToTablescreen(item.teamName, item._links.team.href)" *ngFor="let item of mf.data" >
+        <td class="col-md-1 text-left">{{item.position}}</td>
+        <td class="col-md-3 text-left">{{item.teamName}}</td>
+        <td class="col-md-2 text-left">{{item.playedGames}}</td>
+        <td class="col-md-2 text-left">{{item.wins}}</td>
+        <td class="col-md-2 text-left">{{item.losses}}</td>
+        <td class="col-md-2 text-left">{{item.goals}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+    </tfoot>
+</table>  
+
+</div>
+</div>
